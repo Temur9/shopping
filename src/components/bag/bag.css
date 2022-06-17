@@ -1,0 +1,123 @@
+.bag_section {}
+
+.bag_container {}
+
+#bag_h1 {
+    margin-bottom: 60px;
+}
+
+.bag_card {
+    display: flex;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.bag_card-image {
+    width: 180px;
+    margin-right: 100px;
+}
+
+.bag_card-image img {
+    width: 100%;
+}
+
+.bag_item-counter {
+    margin-right: 200px;
+}
+
+.bag-item-title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 118%;
+    color: #121212;
+    margin-bottom: 35px;
+    width: 350px;
+}
+
+.counter-buttons {
+    display: flex;
+    align-items: center;
+    margin-bottom: 35px;
+}
+
+.counter-buttons p {
+    margin: 0 24px;
+    font-size: 20px;
+    line-height: 118%;
+    color: #514A7E
+}
+
+.counter-buttons button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    font-size: 25px;
+    line-height: 118%;
+    color: #514A7E;
+    cursor: pointer;
+}
+
+.delete-button {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 118%;
+    color: #7D7D7D;
+}
+
+.delete-button img {
+    margin-right: 10px;
+}
+
+.bag_item-price {}
+
+.bag_item-price_text {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 23px;
+    color: #121212;
+    margin-bottom: 65px;
+}
+
+.price-field {
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 118%;
+    color: #514A7E;
+}
+
+.all_price {
+    font-weight: 600;
+    font-size: 20px;
+    color: #121212;
+    display: flex;
+    align-items: center;
+    margin-bottom: 45px;
+}
+
+.all_price span {
+    font-weight: 600;
+    font-size: 40px;
+    color: #514A7E;
+    margin-left: 10px;
+}
+
+.buy_button {
+    border: none;
+    outline: none;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFFDF5;
+    padding: 12px 35px;
+    display: flex;
+    align-items: center;
+    background-color: #514A7E;
+    cursor: pointer;
+    box-shadow: 0 10px 10px 1px #514a7e29;
+}

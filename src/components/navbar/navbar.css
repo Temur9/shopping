@@ -1,0 +1,129 @@
+.scale-up-top {
+	-webkit-animation: scale-up-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: scale-up-top 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+
+@-webkit-keyframes scale-up-top {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+    }
+  }
+  @keyframes scale-up-top {
+    0% {
+      -webkit-transform: scale(0.5);
+              transform: scale(0.5);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+    }
+    100% {
+      -webkit-transform: scale(1);
+              transform: scale(1);
+      -webkit-transform-origin: 50% 0%;
+              transform-origin: 50% 0%;
+    }
+  }
+  
+
+.navbar_section {
+    padding: 30px 0;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav_links{
+    position: absolute;
+    width: 270px;
+    padding: 10px;
+    background-color: #121212;
+}
+.toggle_img{
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+.logoImage {
+    width: 80px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+}
+
+.navbar_links {
+    text-decoration: none;
+    color: #FFFDF5;
+    font-weight: 600;
+    font-size: 14px;
+}
+.navbar_links:hover{
+    color: #514A7E;
+}
+
+.active {
+    color: #514A7E;
+}
+
+.listItems {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    list-style: none;
+}
+
+.listItems li {
+margin-bottom: 20px;
+margin-left: 15px;
+}
+
+.nav_actions {
+    display: flex;
+    align-items: center;
+}
+
+.nav_actions button {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.login {
+    margin-right: 10px;
+    background-image: url('/public/images/avatar.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.shopping_card {
+    background-image: url('/public/images/shopping_bag.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    position: relative;
+}
+.shopping_card span{
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    text-decoration: none;
+    color: #514A7E;
+    font-weight: 600;
+    font-size: 16px;
+}

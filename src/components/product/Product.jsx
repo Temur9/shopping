@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
 import "./product.css";
-import { useSelector,useDispatch} from "react-redux/es/exports";
+import { useSelector, useDispatch } from "react-redux/es/exports";
 import { addCart } from "../../redux/action";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
+
+import { ToastContainer, toast } from "react-toastify";
 
 const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const dispatch=useDispatch();
-  const addProduct=(product)=>{
-    dispatch(addCart(product))
-  }
-
+  const dispatch = useDispatch();
+  const addProduct = (product) => {
+    dispatch(addCart(product));
+  };
 
   useEffect(() => {
     getItems();
@@ -29,7 +30,7 @@ const Product = () => {
         setLoading(false);
       })
       .catch((err) => {
-        console.log(err); 
+        console.log(err);
       });
   };
 
@@ -76,7 +77,10 @@ const Product = () => {
                   <h1 className="product_price">${product.price}</h1>
                   <h3 className="product_descrip">Описание</h3>
                   <h3 className="product_description">{product.description}</h3>
-                  <button className="bag_button" onClick={()=>addProduct(product)}>
+                  <button
+                    className="bag_button"
+                    onClick={(() => addProduct(product))}
+                    >
                     В корзину <img src="./images/shopping-bag.svg" alt="" />
                   </button>
                 </div>

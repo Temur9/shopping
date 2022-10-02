@@ -18,10 +18,12 @@ const Catalog = () => {
       .then((res) => {
         setItems(res.data);
         setFilter(res.data);
-        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 

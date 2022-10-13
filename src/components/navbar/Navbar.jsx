@@ -5,6 +5,8 @@ import "./navbar.css";
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const state = useSelector((state) => state.handleCart);
+
+
   return (
     <>
       <section className="navbar_section">

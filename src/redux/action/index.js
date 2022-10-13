@@ -1,5 +1,7 @@
 //#1 file
 
+import { toast } from "react-toastify"
+
 
 // For Add Item to Cart
 export const addCart = (product) => {

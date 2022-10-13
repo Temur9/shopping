@@ -4,8 +4,7 @@ import { useSelector, useDispatch } from "react-redux/es/exports";
 import { addCart } from "../../redux/action";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
-
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 
 const Product = () => {
   const { id } = useParams();
@@ -15,22 +14,25 @@ const Product = () => {
   const dispatch = useDispatch();
   const addProduct = (product) => {
     dispatch(addCart(product));
+    toast.success('Добавлен в корзину')
   };
 
   useEffect(() => {
     getItems();
   }, []);
-
+  
   const getItems = () => {
     setLoading(true);
     axios
       .get(`https://fakestoreapi.com/products/${id}`)
       .then((res) => {
         setProduct(res.data);
-        setLoading(false);
       })
       .catch((err) => {
         console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
       });
   };
 
@@ -79,8 +81,7 @@ const Product = () => {
                   <h3 className="product_description">{product.description}</h3>
                   <button
                     className="bag_button"
-                    onClick={(() => addProduct(product))}
-                    >
+                    onClick={() => addProduct(product)}>
                     В корзину <img src="./images/shopping-bag.svg" alt="" />
                   </button>
                 </div>

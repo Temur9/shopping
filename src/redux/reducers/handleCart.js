@@ -1,17 +1,18 @@
 //#2 file
+import { toast } from "react-toastify";
 
 const cart = [];
 
 const handleCart = (state = cart, action) => {
   const product = action.payload;
-  switch (action.type) {  
+  switch (action.type) {
     case "ADDITEM":
       //Check if Product is Already Exist
       const exist = state.find((x) => x.id === product.id);
       if (exist) {
         //INcrease the Quantity
         return state.map((x) =>
-          x.id === product.id  ? {...x, qty: x.qty + 1,}: x
+          x.id === product.id ? { ...x, qty: x.qty + 1 } : x
         );
       } else {
         const product = action.payload;
@@ -23,7 +24,6 @@ const handleCart = (state = cart, action) => {
           },
         ];
       }
-   
 
     case "DELITEM":
       const exist1 = state.find((x) => x.id === product.id);
@@ -31,14 +31,12 @@ const handleCart = (state = cart, action) => {
         return state.filter((x) => x.id !== exist1.id);
       } else {
         return state.map((x) =>
-          x.id === product.id ? {...x, qty: x.qty - 1,}: x
+          x.id === product.id ? { ...x, qty: x.qty - 1 } : x
         );
       }
-      
 
     default:
-        return state;
-       
+      return state;
   }
 };
 

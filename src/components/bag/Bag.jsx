@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux/es/hooks/useDispatch";
 import { addCart, delCart } from "../../redux/action";
 import { useEffect } from "react";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const Bag = () => {
   const states = useSelector((state) => state.handleCart);
@@ -14,9 +15,11 @@ const Bag = () => {
   const dispatch = useDispatch();
   const delProduct = (product) => {
     dispatch(delCart(product));
+    toast.warning('Удален из корзины')
   };
   const addProduct = (product) => {
     dispatch(addCart(product));
+    toast.success('Добавлен в корзину')
   };
   
   useEffect(() => {

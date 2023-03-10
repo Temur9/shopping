@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import "./product.css";
-import { useSelector, useDispatch } from "react-redux/es/exports";
-import { addCart } from "../../redux/action";
+import { useDispatch } from "react-redux/es/exports";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { addToCart } from "../../redux/slice/product";
+import Loading from "./loader";
 
 const Product = () => {
   const { id } = useParams();
@@ -12,15 +13,12 @@ const Product = () => {
   const [loading, setLoading] = useState(false);
 
   const dispatch = useDispatch();
+
   const addProduct = (product) => {
-    dispatch(addCart(product));
-    toast.success('Добавлен в корзину')
+    dispatch(addToCart(product));
+    toast.success("Добавлен в корзину");
   };
 
-  useEffect(() => {
-    getItems();
-  }, []);
-  
   const getItems = () => {
     setLoading(true);
     axios
@@ -36,28 +34,9 @@ const Product = () => {
       });
   };
 
-  const Loading = () => {
-    return (
-      <>
-        <div className="loading_container">
-          <div className="lds-spinner">
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-            <div></div>
-          </div>
-        </div>
-      </>
-    );
-  };
+  useEffect(() => {
+    getItems();
+  }, []);
 
   return (
     <>

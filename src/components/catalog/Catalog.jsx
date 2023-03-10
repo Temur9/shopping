@@ -1,7 +1,9 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Cards from "./catalog-card";
 import "./catalog.css";
+import Loader from "./loader-catalog";
 const Catalog = () => {
   const [items, setItems] = useState([]);
   const [filter, setFilter] = useState(items);
@@ -31,44 +33,7 @@ const Catalog = () => {
     const updatedList = items.filter((x) => x.category === cat);
     setFilter(updatedList);
   };
-  const Loading = () => {
-    return (
-      <>
-        <div className="loading_container">
-          <div className="movie--isloading">
-            <div className="loading-image"></div>
-            <div className="loading-content">
-              <div className="loading-text-container">
-                <div className="loading-main-text"></div>
-                <div className="loading-sub-text"></div>
-              </div>
-              <div className="loading-btn"></div>
-            </div>
-          </div>
-          <div className="movie--isloading">
-            <div className="loading-image"></div>
-            <div className="loading-content">
-              <div className="loading-text-container">
-                <div className="loading-main-text"></div>
-                <div className="loading-sub-text"></div>
-              </div>
-              <div className="loading-btn"></div>
-            </div>
-          </div>
-          <div className="movie--isloading">
-            <div className="loading-image"></div>
-            <div className="loading-content">
-              <div className="loading-text-container">
-                <div className="loading-main-text"></div>
-                <div className="loading-sub-text"></div>
-              </div>
-              <div className="loading-btn"></div>
-            </div>
-          </div>
-        </div>
-      </>
-    );
-  };
+
   return (
     <>
       <div className="catalog_section">
@@ -91,21 +56,13 @@ const Catalog = () => {
                 Женщинам
               </button>
             </div>
+            
             {loading ? (
-              <Loading />
+              <Loader />
             ) : (
               <div className="catalog-cards">
                 {filter.map((item, index) => (
-                  <div key={index} className="card">
-                    <img src={item.image} alt="" />
-                    <div className="card_titles">
-                      <p className="price-item">${item.price}</p>
-                      <p className="title-item">{item.title}</p>
-                      <Link className="card-link" to={`/product/${item.id}`}>
-                        <span>Подробнее</span>
-                      </Link>
-                    </div>
-                  </div>
+                  <Cards item={item} index={index} />
                 ))}
               </div>
             )}

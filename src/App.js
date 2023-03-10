@@ -26,12 +26,12 @@ function App() {
       />
         <Navbar />
         <Routes>
-          <Route path="/" element={<Home />} />{" "}
-          <Route path="/product" element={<Catalog />} />{" "}
-          <Route path="/product/:id" element={<Product />} />{" "}
-          <Route path="/bag" element={<Bag />} />{" "}
-        </Routes>{" "}
-      </BrowserRouter>{" "}
+          <Route path="/" element={<Home />} />
+          <Route path="/product" element={<Catalog />} />
+          <Route path="/product/:id" element={<Product />} />
+          <Route path="/bag" element={<Bag />} />
+        </Routes>
+        </BrowserRouter>
     </>
   );
 }

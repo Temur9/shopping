@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import "./navbar.css";
 const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
-  const state = useSelector((state) => state.handleCart);
+  const product = useSelector((state) => state.product.product);
 
 
   return (
@@ -72,11 +72,10 @@ const Navbar = () => {
                 </div>
               )}
             </div>
-
             <div className="nav_actions">
               <button className="login"></button>
               <Link to="/bag" className="shopping_card">
-                <span>{state.length}</span>
+                <span>{product.length}</span>
               </Link>
             </div>
           </nav>

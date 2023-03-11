@@ -81,6 +81,12 @@
     height: 30px;
 }
 
+.card_btns{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .card-link {
     text-decoration: none;
     font-weight: 400;
@@ -104,6 +110,13 @@
     box-shadow: 0 10px 10px 1px #514a7e44;
     background-image: url('/public/images/link_arrow-hover.svg');
 }
+
+.card_add{
+  cursor: pointer;
+  color: #514A7E;
+  transform: scale(1.5);
+}
+
 
 
 /* LOADING */

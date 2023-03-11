@@ -51,9 +51,9 @@ const Bag = () => {
             {product.map((state) => (
               <BagCard state={state} {...bagCardProps} />
             ))}
-            
+
             <p className="all_price">
-              Итого: <span>{getTotal().totalPrice.toFixed(2)}</span>
+              Итого: <span>${getTotal().totalPrice.toFixed(2)}</span>
             </p>
             <button className="buy_button">Заказать</button>
           </div>

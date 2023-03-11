@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./product.css";
-import { useDispatch } from "react-redux/es/exports";
+import { useDispatch, useSelector } from "react-redux/es/exports";
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -12,10 +12,15 @@ const Product = () => {
   const [product, setProduct] = useState([]);
   const [loading, setLoading] = useState(false);
 
+  // const products = useSelector(state=>state.product.product)
+    
+
+
   const dispatch = useDispatch();
 
   const addProduct = (product) => {
     dispatch(addToCart(product));
+
     toast.success("Добавлен в корзину");
   };
 

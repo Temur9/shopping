@@ -6,66 +6,43 @@ const Navbar = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const product = useSelector((state) => state.product.product);
 
-
   return (
     <>
       <section className="navbar_section">
         <div className="container">
           <nav className="navbar">
             <div className="navbar_toggleMenu">
-              {toggleMenu ? (
-                <>
-                  <img
-                    className="toggle_img"
-                    onClick={() => setToggleMenu(false)}
-                    src="/images/menuClose.png"
-                    alt=""
-                  />
-                </>
-              ) : (
-                <>
-                  <img
-                    className="toggle_img"
-                    onClick={() => setToggleMenu(true)}
-                    src="/images/menuIcon.png"
-                    alt=""
-                  />
-                </>
-              )}
-
+              <img
+                className="toggle_img"
+                onClick={() => setToggleMenu(!toggleMenu)}
+                src={`/images/${toggleMenu ? "menuClose.png" : "menuIcon.png"}`}
+                alt=""
+              />
               {toggleMenu && (
                 <div className="nav_links scale-up-top">
                   <Link to="/">
                     <img
+                      onClick={() => setToggleMenu(false)}
                       className="logoImage"
                       src="../images/logo.png"
                       alt=""
                     />
                   </Link>
-                  <ul className="listItems">
-                    <li>
+                  <ul
+                    className="listItems">
+                    <li onClick={() => setToggleMenu(false)}>
                       <NavLink className="navbar_links" to="/">
                         Главная
                       </NavLink>
                     </li>
-                    <li>
+                    <li onClick={() => setToggleMenu(false)}>
                       <NavLink className="navbar_links" to="/product">
                         Каталог
                       </NavLink>
                     </li>
-                    <li>
-                      <NavLink className="navbar_links" to="/product">
-                        Каталог
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink className="navbar_links" to="/product">
-                        Каталог
-                      </NavLink>
-                    </li>
-                    <li>
-                      <NavLink className="navbar_links" to="/product">
-                        Каталог
+                    <li onClick={() => setToggleMenu(false)}>
+                      <NavLink className="navbar_links" to="/bag">
+                        Корзина
                       </NavLink>
                     </li>
                   </ul>

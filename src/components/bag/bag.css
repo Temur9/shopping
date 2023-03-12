@@ -1,28 +1,43 @@
 .bag_section {}
 
-.bag_container {}
+.bag_container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 #bag_h1 {
     margin-bottom: 60px;
+}
+
+
+.bag_card-wrapper {
+    padding: 1px 15px;
+    box-shadow: 0 10px 10px 1px #514a7e29;
 }
 
 .bag_card {
     display: flex;
     align-items: center;
     margin-bottom: 60px;
+    border-bottom: 1px solid #514a7e5d;
+    padding: 10px 0;
 }
+
 
 .bag_card-image {
     width: 180px;
-    margin-right: 100px;
+    margin-right: 200px;
 }
 
 .bag_card-image img {
     width: 100%;
+    height: auto;
+    aspect-ratio: 3/4;
 }
 
 .bag_item-counter {
-    margin-right: 200px;
+    margin-right: 100px;
 }
 
 .bag-item-title {
@@ -91,6 +106,12 @@
     color: #514A7E;
 }
 
+.bag_container-allprice {
+    margin-top: 120px;
+    padding: 15px;
+    box-shadow: 0 10px 10px 1px #514a7e29;
+}
+
 .all_price {
     font-weight: 600;
     font-size: 20px;
@@ -115,8 +136,6 @@
     line-height: 16px;
     color: #FFFDF5;
     padding: 12px 35px;
-    display: flex;
-    align-items: center;
     background-color: #514A7E;
     cursor: pointer;
     box-shadow: 0 10px 10px 1px #514a7e29;

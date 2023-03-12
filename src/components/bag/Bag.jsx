@@ -43,19 +43,23 @@ const Bag = () => {
       <section className="bag_section">
         <div className="container">
           <div className="bag_container">
-            <Link className="button_arrow-back" to="/product">
-              <img id="img_arrow_back" src="/images/arrow_back.svg" alt="" />
-            </Link>
-            <h1 id="bag_h1">Корзина</h1>
-
-            {product.map((state) => (
-              <BagCard state={state} {...bagCardProps} />
-            ))}
-
-            <p className="all_price">
-              Итого: <span>${getTotal().totalPrice.toFixed(2)}</span>
-            </p>
-            <button className="buy_button">Заказать</button>
+            <div className="bag_container-products">
+              <Link className="button_arrow-back" to="/product">
+                <img id="img_arrow_back" src="/images/arrow_back.svg" alt="" />
+              </Link>
+              <h1 id="bag_h1">Корзина</h1>
+              <div className="bag_card-wrapper">
+              {product.map((state) => (
+                <BagCard state={state} {...bagCardProps} />
+              ))}
+              </div>
+            </div>
+            <div className="bag_container-allprice">
+              <p className="all_price">
+                Итого: <span>${getTotal().totalPrice.toFixed(2)}</span>
+              </p>
+              <button className="buy_button">Заказать</button>
+            </div>
           </div>
         </div>
       </section>

@@ -24,7 +24,7 @@ const Cards = ({ item, index }) => {
               <span>Подробнее</span>
             </Link>
             <span onClick={()=>addProduct(item)} className="card_add">
-            <i class="fa-solid fa-cart-plus"></i>
+            <i class="fa-solid fa-bag-shopping"></i>
             </span>
           </div>
         </div>
